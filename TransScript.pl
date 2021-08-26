@@ -197,11 +197,11 @@ sub ConsoleLog {
 	return if ($mute);
 
 	if ($outputCode == 950) {
-		return $_;
+		print $_[0];
+		return;
 	}
 
-	my $msg = shift;
-	print &cp950ex_cp932($msg);
+	print &cp950ex_cp932($_[0]);
 }
 
 sub cp950ex_cp932 {
